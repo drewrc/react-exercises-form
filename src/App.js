@@ -1,24 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import BlogForm from './maincomponents/BlogForm.js';
+ //syntax -> we import inside html by <BlogForm />
+ //example of named function export { BlogForm } - can have as many as you want
+ //can only have 1 export default 
+ import { useState } from 'react';
+ import ContactList from './maincomponents/ContactList.js';
 
 function App() {
+
+  const [blogs, setBlogs] = useState([])
+  const addBlog = (blog) => {
+    setBlogs([...blogs, blog]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+   
+
+<BlogForm addBlog={addBlog} />
+
+    
+
   );
 }
 
