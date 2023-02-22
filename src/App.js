@@ -15,10 +15,7 @@ function App() {
   };
 
   return (
-
-
    
-
 <BlogForm addBlog={addBlog} />
 
     
